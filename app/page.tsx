@@ -1,8 +1,8 @@
-
+import './globals.css';
 import styles from "./page.module.css";
-import Hero from "../src/views/Hero";
-import Navbar from "../src/views/Navbar";
-import Footer from "../src/views/Footer";
+import Hero from "./views/Hero";
+import Navbar from "./views/Navbar";
+import Footer from "./views/Footer";
 
 export default function Home() {
   return (

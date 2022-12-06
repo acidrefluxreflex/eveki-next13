@@ -1,3 +1,5 @@
+
+
 export default function Navbar() {
   return (
     <nav className="sticky top-0  navbar bg-base-100 ">
@@ -64,6 +66,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-
   );
 }

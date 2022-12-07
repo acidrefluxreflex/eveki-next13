@@ -1,21 +1,31 @@
-import './globals.css';
+"use client";
+import "./globals.css";
 import styles from "./page.module.css";
-import Hero from "./views/Hero";
-import Navbar from "./views/Navbar";
-import Footer from "./views/Footer";
-import Carousel from './views/Carousel';
-import { FeatureBlocks } from './views/FeatureBlocks';
+import Hero from "./src/views/Hero";
+import Footer from "./src/views/Footer";
+import Carousel from "./src/views/Carousel";
+import { FeatureBlocks } from "./src/views/FeatureBlocks";
+import Signup from "./src/views/components/Signup";
+import { useAuthContext } from "../lib/Firebase/context/Auth";
 
 export default function Home() {
+
+  const { user, logout } = useAuthContext();
+
   return (
     <div className={styles.container}>
-      <Navbar />
       <main className={styles.main}>
-   
         <Hero />
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
         </h1>
+        <div>
+      Uid: {user.uid} <br />
+      Email: {user.email} <br />
+      DisplayName: {user.displayName} <br />
+  
+    </div>
+
         <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>app/page.tsx</code>
@@ -44,16 +54,13 @@ export default function Home() {
             <h2>Deploy &rarr;</h2>
             <p>Deploy your Next.js site to a public URL with Vercel.</p>
           </a>
-       
         </div>
-     
-        <FeatureBlocks/>
-          <Carousel/>
+
+        <FeatureBlocks />
+        <Carousel />
       </main>
 
-     
       <Footer />
-     
     </div>
   );
 }

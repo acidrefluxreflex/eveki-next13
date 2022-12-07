@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { GradientText } from "../components/GradientText";
+import { GradientText } from "./components/GradientText";
 
 // Built with Vivid (https://vivid.lol) ⚡️
 

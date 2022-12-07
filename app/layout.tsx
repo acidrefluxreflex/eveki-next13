@@ -1,4 +1,9 @@
 import './globals.css';
+import Navbar from "./src/views/Navbar";
+import { AuthContextProvider } from '../lib/Firebase/context/Auth';
+// the module you created above
+
+
 
 export default function RootLayout({
   children,
@@ -12,7 +17,13 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <AuthContextProvider >
+        <Navbar/>
+        {children}
+        </AuthContextProvider>
+        </body>
+
     </html>
   )
 }

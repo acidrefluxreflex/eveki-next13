@@ -5,12 +5,12 @@ import Hero from "./src/views/Hero";
 import Footer from "./src/views/Footer";
 import Carousel from "./src/views/Carousel";
 import { FeatureBlocks } from "./src/views/FeatureBlocks";
-import Signup from "./src/views/components/Signup";
-import { useAuthContext } from "../lib/Firebase/context/Auth";
+
+
 
 export default function Home() {
 
-  const { user, logout } = useAuthContext();
+
 
   return (
     <div className={styles.container}>
@@ -19,12 +19,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
         </h1>
-        <div>
-      Uid: {user.uid} <br />
-      Email: {user.email} <br />
-      DisplayName: {user.displayName} <br />
-  
-    </div>
+     
 
         <p className={styles.description}>
           Get started by editing{" "}

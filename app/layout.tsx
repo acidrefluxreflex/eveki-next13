@@ -1,6 +1,6 @@
 import './globals.css';
 import Navbar from "./src/views/Navbar";
-import { AuthContextProvider } from '../lib/Firebase/context/Auth';
+import { AuthProvider } from '../lib/Firebase/context/GAuth';
 // the module you created above
 
 
@@ -18,10 +18,10 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <AuthContextProvider >
+        <AuthProvider >
         <Navbar/>
         {children}
-        </AuthContextProvider>
+        </AuthProvider>
         </body>
 
     </html>

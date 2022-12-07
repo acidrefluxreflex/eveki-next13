@@ -3,13 +3,15 @@ import styles from "./page.module.css";
 import Hero from "./views/Hero";
 import Navbar from "./views/Navbar";
 import Footer from "./views/Footer";
+import Carousel from './views/Carousel';
+import { FeatureBlocks } from './views/FeatureBlocks';
 
 export default function Home() {
   return (
     <div className={styles.container}>
-    
+    <Navbar />
       <main className={styles.main}>
-      <Navbar />
+      
         <Hero />
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
@@ -43,7 +45,8 @@ export default function Home() {
             <p>Deploy your Next.js site to a public URL with Vercel.</p>
           </a>
         </div>
-  
+        <FeatureBlocks/>
+  <Carousel/>
       </main>
 
      

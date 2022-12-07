@@ -2,7 +2,7 @@
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0  navbar bg-base-100 ">
+    <nav className="sticky top-0  navbar bg-base-100 z-50">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
       </div>

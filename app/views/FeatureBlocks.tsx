@@ -1,9 +1,6 @@
 import { ReactNode } from "react";
 
-
 import { GradientText } from "../components/GradientText";
-
-
 
 // Built with Vivid (https://vivid.lol) ⚡️
 
@@ -64,8 +61,7 @@ export const FeatureBlocks = () => {
             Build components using Vivid in React styled with Tailwind CSS
           </BlockText>
         </Block>
-      
       </div>
-  </div>
+    </div>
   );
 };

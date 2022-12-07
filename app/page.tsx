@@ -9,9 +9,9 @@ import { FeatureBlocks } from './views/FeatureBlocks';
 export default function Home() {
   return (
     <div className={styles.container}>
-    <Navbar />
+      <Navbar />
       <main className={styles.main}>
-      
+   
         <Hero />
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
@@ -44,9 +44,11 @@ export default function Home() {
             <h2>Deploy &rarr;</h2>
             <p>Deploy your Next.js site to a public URL with Vercel.</p>
           </a>
+       
         </div>
+     
         <FeatureBlocks/>
-  <Carousel/>
+          <Carousel/>
       </main>
 
      

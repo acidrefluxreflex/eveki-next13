@@ -1,10 +1,9 @@
 "use client";
-import type { NextPage } from "next";
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "../../lib/Firebase/context/Auth";
 import MailLogin from "../src/components/MailLogin";
 
-const LoginPage: NextPage = () => {
+const LoginPage = () => {
   const router = useRouter();
   const { login } = useAuthContext();
   const loginWithGoogle = async () => {

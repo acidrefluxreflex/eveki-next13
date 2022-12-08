@@ -1,3 +1,4 @@
+"use client";
 import './globals.css';
 import Navbar from "./src/views/Navbar";
 import { AuthProvider } from '../lib/Firebase/context/GAuth';

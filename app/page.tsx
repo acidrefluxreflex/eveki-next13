@@ -1,4 +1,4 @@
-"use client";
+
 import "./globals.css";
 import styles from "./page.module.css";
 import Hero from "./src/views/Hero";
@@ -6,12 +6,7 @@ import Footer from "./src/views/Footer";
 import Carousel from "./src/views/Carousel";
 import { FeatureBlocks } from "./src/views/FeatureBlocks";
 
-
-
 export default function Home() {
-
-
-
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -19,7 +14,6 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js 13!</a>
         </h1>
-     
 
         <p className={styles.description}>
           Get started by editing{" "}

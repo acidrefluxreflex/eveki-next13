@@ -1,10 +1,15 @@
-
 "use client";
-import { onAuthStateChanged } from '@firebase/auth';
-import { doc, getDoc, setDoc } from '@firebase/firestore';
-import { createContext, useContext, ReactNode, useEffect, useState } from 'react';
-import { auth, db } from '../config/firebase';
-import { User } from '../../../src/types/user';
+import { onAuthStateChanged } from "@firebase/auth";
+import { doc, getDoc, setDoc, serverTimestamp } from "@firebase/firestore";
+import {
+  createContext,
+  useContext,
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
+import { auth, db } from "../config/firebase";
+import { User } from "../../../src/types/user";
 
 type UserContextType = User | null | undefined;
 
@@ -18,12 +23,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<UserContextType>();
 
   useEffect(() => {
-    
     // ログイン状態を監視し、変化があったら発動
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
         // ログインしていた場合、ユーザーコレクションからユーザーデータを参照
-        const ref = doc(db, `users/${firebaseUser.uid}`);
+        const ref = doc(db, `user/${firebaseUser.uid}`);
         const snap = await getDoc(ref);
 
         if (snap.exists()) {
@@ -31,13 +35,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           const appUser = (await getDoc(ref)).data() as User;
           setUser(appUser);
         } else {
+          const date = Date;
           // ユーザーが未作成の場合、新規作成して格納
           const appUser: User = {
-            id: firebaseUser.uid,
+            userID: firebaseUser.uid,
             name: firebaseUser.displayName!,
             photoURL: firebaseUser.photoURL!,
             email: firebaseUser.email!,
-            createdAt: Date.now(),
+            createDate: serverTimestamp(),
           };
 
           // Firestoreにユーザーデータを保存

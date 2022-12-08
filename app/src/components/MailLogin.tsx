@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useAuthContext } from "../../../../lib/Firebase/context/Auth";
-import { auth } from "../../../../lib/Firebase/config/firebase";
-import { Login } from "../../../../lib/Firebase/context/GAuthContext";
+import { useAuthContext } from "../../../lib/Firebase/context/Auth";
+import { auth } from "../../../lib/Firebase/config/firebase";
+import { Login } from "../../../lib/Firebase/context/GAuthContext";
 
 const MailLogin = () => {
   const router = useRouter();

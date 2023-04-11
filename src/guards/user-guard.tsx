@@ -1,8 +1,8 @@
 "use client";
-import { useRouter } from 'next/navigation';
-import { ReactNode } from 'react';
-import { useAuth } from '../../lib/Firebase/context/GAuth'
-import { User } from '../types/user';
+import { useRouter } from "next/navigation";
+import { ReactNode } from "react";
+import { useAuth } from "../../app/src/GAuth";
+import { User } from "../types/user";
 
 type Props = {
   children: ((user: User) => ReactNode) | ReactNode;
@@ -14,7 +14,7 @@ const UserGuard = ({ children }: Props) => {
 
   // 未ログインであればリダイレクト
   if (user === null) {
-    router.push('/');
+    router.push("/");
     return null;
   }
 
@@ -23,7 +23,7 @@ const UserGuard = ({ children }: Props) => {
     return null;
   }
 
-  if (typeof children === 'function') {
+  if (typeof children === "function") {
     // 関数であればユーザー情報を渡して実行
     return <>{children(user)}</>;
   } else {

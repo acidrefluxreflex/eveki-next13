@@ -1,17 +1,20 @@
 "use client";
 import './globals.css';
 import Navbar from "./src/views/Navbar";
-import { AuthProvider } from '../lib/Firebase/context/GAuth';
+import { AuthProvider } from './src/GAuth';
 // the module you created above
+import AuthStatus from './src/components/auth-status';
 
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const AuthStatusDiv = await AuthStatus();
   return (
+   
     <html lang="en">
       {/*
         <head /> will contain the components returned by the nearest parent
@@ -19,10 +22,11 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <AuthProvider >
+     <AuthProvider >
         <Navbar/>
+        {AuthStatusDiv}
         {children}
-        </AuthProvider>
+        </AuthProvider >
         </body>
 
     </html>

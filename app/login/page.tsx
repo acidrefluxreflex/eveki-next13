@@ -1,27 +1,11 @@
-"use client";
-import { useRouter } from "next/navigation";
-import { useAuthContext } from "../../lib/Firebase/context/Auth";
-import MailLogin from "../src/components/MailLogin";
 
-const LoginPage = () => {
-  const router = useRouter();
-  const { login } = useAuthContext();
-  const loginWithGoogle = async () => {
-    try {
-      await login();
-      router.push("/");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
+export default function LoginPage  ()  {
+    
+
   return (
     <div>
-      <MailLogin />
-      <button
-        type="button"
-        className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
-        onClick={loginWithGoogle}
-      >
+      
         <svg
           className="mr-2 -ml-1 w-4 h-4"
           aria-hidden="true"
@@ -38,9 +22,9 @@ const LoginPage = () => {
           ></path>
         </svg>
         Sign in with Google
-      </button>
+      
     </div>
   );
 };
 
-export default LoginPage;
+

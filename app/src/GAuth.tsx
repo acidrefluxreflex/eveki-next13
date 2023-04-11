@@ -8,8 +8,8 @@ import {
   useEffect,
   useState,
 } from "react";
-import { auth, db } from "../config/firebase";
-import { User } from "../../../src/types/user";
+import { auth, db } from "../../lib/Firebase/config/firebase";
+import { User } from "../../src/types/user";
 
 type UserContextType = User | null | undefined;
 
